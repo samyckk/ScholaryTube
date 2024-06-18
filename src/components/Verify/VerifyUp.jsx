@@ -11,7 +11,7 @@ const VerifyUp = () => {
 
     useEffect(() => {
         const fetch = async () => {
-            await axios.get('http://localhost:8080/api/users/req').then((res) => {
+            await axios.get('https://scholary-tube-server.vercel.app/api/users/req').then((res) => {
                 console.log(res.data);
                 setList(res.data);
             });
@@ -21,7 +21,7 @@ const VerifyUp = () => {
     }, [trigger]);
 
     const acceptUploader = async (applier) => {
-        await axios.put(`http://localhost:8080/api/users/updateAcceptReq/${applier._id}`).then( (res) =>{
+        await axios.put(`https://scholary-tube-server.vercel.app/api/users/updateAcceptReq/${applier._id}`).then( (res) =>{
             if(applier._id === currentUser._id){
                 dispatch(roleRedux("uploader"));
             }
@@ -31,7 +31,7 @@ const VerifyUp = () => {
     };
 
     const declineUploader = async (applier)=>{
-        await axios.put(`http://localhost:8080/api/users/updateRejectReq/${applier._id}`).then( (res) =>{
+        await axios.put(`https://scholary-tube-server.vercel.app/api/users/updateRejectReq/${applier._id}`).then( (res) =>{
             if(applier._id === currentUser._id){
                 dispatch(roleRedux("student"));
             }
