@@ -8,7 +8,7 @@ const Maincontent = ({type})=>{
 
     useEffect( ()=>{
         const fetchVideos = async()=>{
-            await axios.get(`http://localhost:8000/api/videos/${type}`).then((res)=>{
+            await axios.get(`https://scholary-tube.vercel.app/api/videos/${type}`).then((res)=>{
             setVideos(res.data);
         })
         }
