@@ -142,7 +142,7 @@ const Sidebar = ()=>{
                         </div>
                     </Link>
 
-                    <Link to={`/search?q=Sports`}> 
+                    <Link to={`/search?q=Maths`}> 
                         <div id="Item" className="flex flex-row text-white w-full items-center h-10 mt-2 hover:bg-[#666666] rounded-lg">
                             <div id="listIcon" className="flex w-1/5 h-3/6 justify-center">
                                 <img src="https://img.icons8.com/?size=100&id=aJoYP2xepJFZ&format=png&color=FFFFFF" alt="home" srcSet="" />
