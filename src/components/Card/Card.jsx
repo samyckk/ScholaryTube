@@ -8,7 +8,7 @@ const Card = ({ video }) => {
 
   useEffect(() => {
     const fetchChannel = async () => {
-      const res = await axios.get(`https://scholary-tube.vercel.app/users/find/${video.userId}`);
+      const res = await axios.get(`https://scholary-tube-server.vercel.app/api/users/find/${video.userId}`);
       setUser(res.data);
     };
     fetchChannel();
