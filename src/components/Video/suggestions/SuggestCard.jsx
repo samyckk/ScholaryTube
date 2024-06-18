@@ -8,7 +8,7 @@ const SuggestCard = ({ vid }) => {
 
   useEffect(() => {
     const fetchChannel = async () => {
-      const res = await axios.get(`http://localhost:8080/api/users/find/${vid.userId}`);
+      const res = await axios.get(`https://scholary-tube-server.vercel.app/api/users/find/${vid.userId}`);
       setUser(res.data);
     };
     fetchChannel();
