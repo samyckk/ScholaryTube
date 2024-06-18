@@ -21,12 +21,12 @@ const VideoPage = () => {
 
     useEffect(() => {
         const fetchdata = async () => {
-            await axios.put(`http://localhost:8080/api/videos/addView/${videoId}`).then(() => {
+            await axios.put(`https://scholary-tube-server.vercel.app/api/videos/addView/${videoId}`).then(() => {
                 console.log("Added view");
             });
 
             // Get video details
-            await axios.get(`http://localhost:8080/api/videos/fetch/${videoId}`).then((res) => {
+            await axios.get(`https://scholary-tube-server.vercel.app/api/videos/fetch/${videoId}`).then((res) => {
                 dispatch(fetchVideo(res.data));
             });
         };
@@ -37,7 +37,7 @@ const VideoPage = () => {
     useEffect(() => {
         if (videoDetails?.userId) {
             const getChannel = async () => {
-                await axios.get(`http://localhost:8080/api/users/find/${videoDetails.userId}`).then((res) => {
+                await axios.get(`https://scholary-tube-server.vercel.app/api/users/find/${videoDetails.userId}`).then((res) => {
                     setChannel(res.data);
                 });
             };
@@ -51,7 +51,7 @@ const VideoPage = () => {
             return;
         }
         if (!userDetails.likedVids?.includes(videoDetails._id)) {
-            await axios.put(`http://localhost:8080/api/videos/like/${videoDetails._id}`).then(() => {
+            await axios.put(`https://scholary-tube-server.vercel.app/api/videos/like/${videoDetails._id}`).then(() => {
                 console.log("Video Liked successfully");
                 dispatch(likeRedux(videoDetails._id));
             });
@@ -64,7 +64,7 @@ const VideoPage = () => {
             return;
         }
         if (!userDetails.dislikedVids?.includes(videoDetails._id)) {
-            await axios.put(`http://localhost:8080/api/videos/dislike/${videoDetails._id}`).then(() => {
+            await axios.put(`https://scholary-tube-server.vercel.app/api/videos/dislike/${videoDetails._id}`).then(() => {
                 console.log("Video disLiked successfully");
                 dispatch(dislikeRedux(videoDetails._id));
             });
@@ -77,7 +77,7 @@ const VideoPage = () => {
             return;
         }
         if (channel._id === userDetails._id) {
-            await axios.delete(`http://localhost:8080/api/videos/${videoDetails._id}`).then(() => {
+            await axios.delete(`https://scholary-tube-server.vercel.app/api/videos/${videoDetails._id}`).then(() => {
                 console.log("Deleted Successfully!");
                 navigate("/");
             });
@@ -92,8 +92,8 @@ const VideoPage = () => {
             return;
         }
         userDetails.subscribedUsers.includes(channel._id)
-            ? await axios.put(`http://localhost:8080/api/users/unsub/${channel._id}`)
-            : await axios.put(`http://localhost:8080/api/users/sub/${channel._id}`);
+            ? await axios.put(`https://scholary-tube-server.vercel.app/api/users/unsub/${channel._id}`)
+            : await axios.put(`https://scholary-tube-server.vercel.app/api/users/sub/${channel._id}`);
         dispatch(subscription(channel._id));
     };
 
