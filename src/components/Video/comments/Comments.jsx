@@ -15,7 +15,7 @@ const Comments = ({videoId})=>{
 
     useEffect(()=>{
         const fetchComments = async()=>{
-            await axios.get(`http://localhost:8080/api/comments/${videoId}`).then( (res)=>{
+            await axios.get(`https://scholary-tube-server.vercel.app/api/comments/${videoId}`).then( (res)=>{
                 setComments(res.data);
             })
         }
@@ -33,7 +33,7 @@ const Comments = ({videoId})=>{
             return ;
         }
         if (newcmnt.trim().length === 0) return;
-        await axios.post(`http://localhost:8080/api/comments/addComment/${videoId}`, {newcmnt}).then( (res)=>{
+        await axios.post(`https://scholary-tube-server.vercel.app/api/comments/addComment/${videoId}`, {newcmnt}).then( (res)=>{
             setnewcmnt("");
             setTrig(!trig);        
         })
