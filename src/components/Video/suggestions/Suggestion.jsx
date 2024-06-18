@@ -7,7 +7,7 @@ const Suggestion = ({tags})=>{
     const [allVids, setAllVids] = useState([]);
     useEffect(()=>{
         const getVideos = async()=>{
-            await axios.get(`http://localhost:8080/api/videos/tags?tags=${tags}`).then((res)=>{
+            await axios.get(`https://scholary-tube-server.vercel.app/api/videos/tags?tags=${tags}`).then((res)=>{
                 setAllVids(res.data);
             }
             );
