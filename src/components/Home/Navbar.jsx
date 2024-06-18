@@ -34,7 +34,7 @@ const Navbar = ()=>{
                 <Link to="/">
                     <div id="youtube_icon" className="flex items-center">
                         <img style={{height: "56px"}} src={`${process.env.PUBLIC_URL}/Dlogo.png`} alt="yt_icon" srcSet="" />
-                        <p className="text-white m-auto font-semibold text-2xl">ScholarlyTube</p>
+                        <p className="text-white m-auto font-semibold text-2xl">DinkiTube</p>
                     </div>
                 </Link>
             </div>
