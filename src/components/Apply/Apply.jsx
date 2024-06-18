@@ -13,7 +13,7 @@ const Apply = ({setApply})=>{
     }
 
     const handleApply = async()=>{
-        await axios.put('https://scholary-tube.vercel.app/api/users/applyEdu').then((res)=>{
+        await axios.put('https://scholary-tube-server.vercel.app/api/users/applyEdu').then((res)=>{
             console.log(res.data);
             dispatch(roleRedux("requested"));
             setApply(false);
