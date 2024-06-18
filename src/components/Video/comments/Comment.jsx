@@ -9,7 +9,7 @@ const Comment = ({comment})=>{
 
     useEffect(()=>{
         const getCommer = async()=>{
-            await axios.get(`http://localhost:8080/api/users/find/${comment.userId}`).then( (res)=>{
+            await axios.get(`https://scholary-tube-server.vercel.app/api/users/find/${comment.userId}`).then( (res)=>{
                 setCommenter(res.data);
             })
         }
