@@ -31,7 +31,7 @@ const Navbar = ()=>{
                 <div id="menu_icon" className="flex justify-center align-middle h-full p-3">
                     <img style={{height: "30px", margin: "auto"}} src="https://img.icons8.com/?size=100&id=21090&format=png&color=000000" alt="menu" srcSet="" />
                 </div>
-                <Link to="/">
+                <Link to="/home">
                     <div id="youtube_icon" className="flex items-center">
                         <img style={{height: "56px"}} src={`${process.env.PUBLIC_URL}/Dlogo.png`} alt="yt_icon" srcSet="" />
                         <p className="text-white m-auto font-semibold text-2xl">DinkiTube</p>
