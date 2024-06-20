@@ -22,7 +22,7 @@ const SignInUpForm = ({setIsLogin}) => {
         try {
             const result = await signInWithPopup(auth, provider);
             dispatch(loginStart());
-            const res = await axios.post("http://localhost:8080/api/auth/google", {
+            const res = await axios.post("https://scholary-tube-server.vercel.app/api/auth/google", {
                 name: result.user.displayName,
                 email: result.user.email,
                 img: result.user.photoURL
@@ -39,7 +39,7 @@ const SignInUpForm = ({setIsLogin}) => {
         e.preventDefault();
         dispatch(loginStart());
         try {
-            const res = await axios.post("http://localhost:8080/api/auth/signin", { name, password }, { withCredentials: true });
+            const res = await axios.post("https://scholary-tube-server.vercel.app/api/auth/signin", { name, password }, { withCredentials: true });
             console.log('Successfully logged in');
             setIsLogin(true);
             dispatch(loginSuccess(res.data));
@@ -52,7 +52,7 @@ const SignInUpForm = ({setIsLogin}) => {
 
     const handleSignup = async () => {
         try {
-            await axios.post("http://localhost:8080/api/auth/signup", { name, email, password }, { withCredentials: true }).then((res)=>{
+            await axios.post("https://scholary-tube-server.vercel.app/api/auth/signup", { name, email, password }, { withCredentials: true }).then((res)=>{
                 setIsSignUp(false);
                 console.log('Successfully signed up');
             });
