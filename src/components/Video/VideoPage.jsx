@@ -79,7 +79,7 @@ const VideoPage = () => {
         if (channel._id === userDetails._id) {
             await axios.delete(`https://scholary-tube-server.vercel.app/api/videos/${videoDetails._id}`).then(() => {
                 console.log("Deleted Successfully!");
-                navigate("/");
+                navigate("/home");
             });
         } else {
             alert("You can delete only your Videos");
