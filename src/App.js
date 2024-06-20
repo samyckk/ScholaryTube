@@ -7,6 +7,7 @@ import VideoPage from './components/Video/VideoPage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from './components/Home/Search';
 import VerifyUp from './components/Verify/VerifyUp';
+import Info from './components/Verify/Info';
 
 function App() {
 
@@ -17,7 +18,8 @@ function App() {
       <>
         <Navbar isLogin = {isLogin} />
         <Routes>
-          <Route path="/" element={<Page type="random" />} />
+          <Route path="/" element = {<Info/>} />
+          <Route path="/home" element={<Page type="random" />} />
           <Route path="trending" element={<Page type="trending" />} />
           <Route path="subscriptions" element={<Page type="subVids" />} />
           <Route path="/likee" element={<Page type="likeVideos"/>} />
@@ -26,7 +28,6 @@ function App() {
           <Route path="/video/:id" element = {<VideoPage/>} />
           <Route path="/search" element = {<Search/>} />
           <Route path="/verifyUploaders" element= {<VerifyUp/>}/>
-          
         </Routes>
       </>
     </BrowserRouter>
