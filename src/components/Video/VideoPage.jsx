@@ -103,8 +103,8 @@ const VideoPage = () => {
 
     return (
         <div id="main" className="flex flex-row justify-between w-full mt-14">
-            <div id="videoSide" className="w-[63%] text-white m-6 mr-5">
-                <div id="mainvid" className="h-[560px]">
+            <div id="videoSide" className="w-full sm:w-[63%] text-white m-6 mr-5">
+                <div id="mainvid" className="h-[220px] sm:h-[450px]">
                     <video controls style={{ height: "550px", width: "950px" }} className="rounded-2xl z-[-1]" src={videoDetails.videoUrl} alt="" />
                 </div>
                 <div id="detail">
@@ -150,7 +150,7 @@ const VideoPage = () => {
                     <Comments videoId={videoId} />
                 </div>
             </div>
-            <div id="Suggestions" className="w-2/6 text-white">
+            <div id="Suggestions" className="sm:w-2/6 text-white">
                 <Suggestion tags={videoDetails.tags} />
             </div>
         </div>
