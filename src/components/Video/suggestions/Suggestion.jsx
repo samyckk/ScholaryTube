@@ -17,7 +17,7 @@ const Suggestion = ({tags})=>{
     },[tags]);
 
     return(
-        <div className="mt-6 ml-4">
+        <div className="mt-6 ml-4 sm:block hidden">
             {allVids.map((vid)=>{
                return <SuggestCard key={vid._id} vid = {vid}/>
             })}
