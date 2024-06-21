@@ -36,7 +36,7 @@ const Navbar = ()=>{
                 </Link>
             </div>
 
-            <div id="mid" className="flex w-6/12 h-full items-center">
+            <div id="mid" className="flex w-1/4 sm:w-1/2 h-full items-center">
                 <input 
                     onChange={(e)=>{setQuery(e.target.value)}}
                     type="text" 
