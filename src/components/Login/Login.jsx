@@ -90,7 +90,7 @@ const SignInUpForm = ({setIsLogin}) => {
                         <div className="social-container">
                             <div className="border border-red-500 rounded-3xl p-2 px-4 flex flex-row cursor-pointer" onClick={signinwithgoogle}>
                             <img style={{height: "20px", marginRight: "10px", marginTop: "3px"}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" alt="goggleicon" srcSet="" />
-                                <span>Sign up with Google</span> 
+                                 <span className="hidden sm:block">Sign up with Google</span>
                             </div>    
                         </div>
                         <span id='span'>or use your email for registration</span>
@@ -108,7 +108,7 @@ const SignInUpForm = ({setIsLogin}) => {
                         <div className="social-container">
                             <div className="border border-red-500 rounded-3xl p-2 px-4 flex flex-row cursor-pointer" onClick={signinwithgoogle}>
                             <img style={{height: "20px", marginRight: "10px", marginTop: "3px"}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" alt="goggleicon" srcSet="" />
-                                <span>Sign in with Google</span> 
+                               <span className="hidden sm:block">Sign in with Google</span> 
                             </div>    
                         </div>
                         <span id='span'>or use your account</span>
