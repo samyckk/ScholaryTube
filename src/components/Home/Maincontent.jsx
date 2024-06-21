@@ -18,7 +18,7 @@ const Maincontent = ({type})=>{
     },[type])
 
     return (
-        <div id="mainContent" className="flex ml-44 h-full w-full bg-black flex-row flex-wrap mt-14">
+        <div id="mainContent" className="flex sm:ml-44 h-full w-full bg-black flex-row flex-wrap mt-14">
             {videos.length ===0 ? (<h1 className="text-white font-semibold text-4xl m-auto">Nothing To Display</h1>):videos.map( (video)=>{
                return <Card key={video._id} video={video}/>
             })}
