@@ -17,7 +17,7 @@ const Sidebar = ()=>{
 
     return(
         <>
-            <div id="sidebar" className="flex h-[740px] w-44 bg-[#212121] mt-12 fixed top-0">
+            <div id="sidebar" className=" sm:flex hidden h-[740px] w-44 bg-[#212121] mt-12 fixed top-0">
                     <div id="list" className="flex flex-col w-40 mx-auto">
                     <Link to="/home">
                         <div id="Item" className="flex flex-row text-white w-full items-center h-10 mt-2 hover:bg-[#666666] rounded-lg">
