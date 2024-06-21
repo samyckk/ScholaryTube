@@ -31,7 +31,7 @@ const Navbar = ()=>{
                 <Link to="/home">
                     <div id="youtube_icon" className="flex items-center">
                         <img style={{height: "56px"}} src={`${process.env.PUBLIC_URL}/Dlogo.png`} alt="yt_icon" srcSet="" />
-                        <p className="text-white m-auto font-semibold text-2xl">DinkiTube</p>
+                        <p className="text-white m-auto font-semibold text-lg sm:text-2xl">DinkiTube</p>
                     </div>
                 </Link>
             </div>
@@ -54,7 +54,7 @@ const Navbar = ()=>{
                    currentUser &&  currentUser.admin && 
                    ( 
                     <Link to="/verifyUploaders">
-                        <div className="text-white bg-yellow-500 mr-6 rounded-lg p-1 px-2 cursor-pointer">
+                        <div className="hidden sm:flex text-white bg-yellow-500 mr-6 rounded-lg p-1 px-2 cursor-pointer">
                             <span>Verify Uploaders</span>
                         </div>
                     </Link>)
@@ -68,7 +68,7 @@ const Navbar = ()=>{
                     }
                     <div className="flex flex-row cursor-pointer">
                         <img style={{height: "40px"}} className="rounded-full ml-4 " src={currentUser.img ? currentUser.img : "https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"} alt="" />
-                        <span className="text-white mx-2 mr-4 mt-2">{currentUser.name[0].toUpperCase() + currentUser.name.slice(1)}</span>
+                        <span className="hidden sm:flex text-white mx-2 mr-4 mt-2">{currentUser.name[0].toUpperCase() + currentUser.name.slice(1)}</span>
                     </div>
 
                     {/* {
