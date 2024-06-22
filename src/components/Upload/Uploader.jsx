@@ -95,7 +95,7 @@ const Uploader = ({ setUploader }) => {
 
     return (
         <div className="fixed inset-0 trans bg-black/[.8] z-50 flex justify-center items-center">
-            <div className="w-2/4 h-[90%] bg-[#212121]">
+            <div className="w-11/12 sm:w-2/4 h-[90%] bg-[#212121]">
                 <div id="title" className="m-4 flex flex-row justify-between">
                     <span className="text-white font-bold text-4xl">Upload Your Video</span>
                     <img onClick={() => { setUploader(false) }} className="cursor-pointer" style={{ height: "30px" }} src="https://img.icons8.com/?size=100&id=71200&format=png&color=FFFFFF" alt="" />
