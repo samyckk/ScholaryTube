@@ -12,11 +12,13 @@ import {
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import userReducer from './userSlice.js';
 import videoReducer from './videoSlice.js';
+import menuReducer from './menuSlice.js';
 
 // Combine your reducers
 const rootReducer = combineReducers({
   user: userReducer,
   video: videoReducer,
+  menu: menuReducer
 });
 
 // Persist configuration
