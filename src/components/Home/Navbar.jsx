@@ -1,15 +1,24 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Uploader from "../Upload/Uploader";
+import { changeMenu } from "../redux/menuSlice";
+
 
 const Navbar = ()=>{
 
     const navigate = useNavigate();
-
+    const dispatch = useDispatch();
     const currentUser = useSelector(state=>state.user.userDetails);
     const [uploader, setUploader] = useState(false);
     const [q, setQuery] = useState("");
+    // const [menu, setMenu] = useState(false);
+
+    const { menu } = useSelector(state => state.menu);
+
+    const handleMenu = ()=>{
+        dispatch(changeMenu());
+    }
 
     const handleSearch = ()=>{
         setQuery(q);
@@ -28,10 +37,14 @@ const Navbar = ()=>{
         <div id="main" className="flex h-14 bg-[#212121] justify-between fixed top-0 w-full z-50">
        
             <div id="left" className="flex justify-center h-full">
+                <div onClick={handleMenu} className="flex sm:hidden justify-center items-center cursor-pointer" >
+                    <img style={{height: "30px"}} src="https://img.icons8.com/?size=100&id=36389&format=png&color=FFFFFF" alt="" />
+                </div>
                 <Link to="/home">
+               
                     <div id="youtube_icon" className="flex items-center">
                         <img style={{height: "56px"}} src={`${process.env.PUBLIC_URL}/Dlogo.png`} alt="yt_icon" srcSet="" />
-                        <p className="text-white m-auto font-semibold text-lg sm:text-2xl">DinkiTube</p>
+                        <p className="text-white m-auto font-semibold text-base sm:text-2xl">ScholarlyTube</p>
                     </div>
                 </Link>
             </div>
@@ -60,13 +73,11 @@ const Navbar = ()=>{
                     </Link>)
                 }
                 
-                
-               
                 {currentUser ? (<div className="flex flex-row">
                     {currentUser.role === "uploader" &&
-                    (<img className="cursor-pointer" onClick={handleUploader} style={{height: "30px", marginRight: "15px", marginTop: "4px"}} src="https://img.icons8.com/?size=100&id=11374&format=png&color=FFFFFF" alt="addVideo" />)
+                    (<img className="cursor-pointer" onClick={handleUploader} style={{height: "30px", marginRight: "15px", marginTop: "4px"}} src="https://img.icons8.com/?size=100&id=11374&format=png&color=FFFFFF" alt="" />)
                     }
-                    <div className="flex flex-row cursor-pointer">
+                    <div className="flex flex-row">
                         <img style={{height: "40px"}} className="rounded-full ml-4 " src={currentUser.img ? currentUser.img : "https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"} alt="" />
                         <span className="hidden sm:flex text-white mx-2 mr-4 mt-2">{currentUser.name[0].toUpperCase() + currentUser.name.slice(1)}</span>
                     </div>
