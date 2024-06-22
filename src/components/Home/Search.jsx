@@ -26,7 +26,7 @@ const Search = () => {
     return (
         <div className="mt-16 flex flex-row">
             <Sidebar />
-            <div className="ml-44 flex flex-row flex-wrap">
+            <div className="sm:ml-44 flex flex-row flex-wrap">
             {allVids.length ===0 ? (<h1 className="text-white font-semibold text-4xl m-auto">Nothing To Display</h1>):allVids.map( (video)=>{
                return <Card key={video._id} video={video}/>
             })}
