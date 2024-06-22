@@ -8,6 +8,7 @@ import Apply from "../Apply/Apply";
 const Sidebar = ()=>{
 
     const {userDetails}  = useSelector(state=>state.user);
+    const { menu } = useSelector(state => state.menu);
     const [apply, setApply] = useState(false);
 
     const dispatch = useDispatch();
@@ -15,9 +16,12 @@ const Sidebar = ()=>{
         dispatch(loginSuccess(null));
     }
 
+
+
+
     return(
         <>
-            <div id="sidebar" className=" sm:flex hidden h-[740px] w-44 bg-[#212121] mt-12 fixed top-0">
+            <div id="sidebar" className={`${menu ? "flex" : "hidden"} h-[740px] w-44 bg-[#212121] mt-12 fixed top-0`}>
                     <div id="list" className="flex flex-col w-40 mx-auto">
                     <Link to="/home">
                         <div id="Item" className="flex flex-row text-white w-full items-center h-10 mt-2 hover:bg-[#666666] rounded-lg">
@@ -142,7 +146,7 @@ const Sidebar = ()=>{
                         </div>
                     </Link>
 
-                    <Link to={`/search?q=Maths`}> 
+                    <Link to={`/search?q=Sports`}> 
                         <div id="Item" className="flex flex-row text-white w-full items-center h-10 mt-2 hover:bg-[#666666] rounded-lg">
                             <div id="listIcon" className="flex w-1/5 h-3/6 justify-center">
                                 <img src="https://img.icons8.com/?size=100&id=aJoYP2xepJFZ&format=png&color=FFFFFF" alt="home" srcSet="" />
