@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { loginSuccess } from "../redux/userSlice";
 
 
-const useLogoutOnClose = async() => {
+const useLogoutOnClose = () => {
 
     const dispatch = useDispatch();
     dispatch(loginSuccess(null));
