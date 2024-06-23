@@ -11,7 +11,7 @@ const useLogoutOnClose = async() => {
     useEffect(() => {
       const handleBeforeUnload = async() => {
         dispatch(loginSuccess(null));
-        await axios.put("http://localhost:8080/api/users/logout").then((res)=>{
+        await axios.put("https://scholary-tube-server.vercel.app/api/users/logout").then((res)=>{
             console.log("Logged out");
         })
       };
