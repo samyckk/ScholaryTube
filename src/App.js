@@ -8,13 +8,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from './components/Home/Search';
 import VerifyUp from './components/Verify/VerifyUp';
 import Info from './components/Verify/Info';
-import useLogoutOnClose from './components/Login/Logout';
+// import useLogoutOnClose from './components/Login/Logout';
 
 function App() {
 
   // eslint-disable-next-line no-unused-vars
   const [isLogin, setIsLogin] = useState(false);
-  useLogoutOnClose();
+  // useLogoutOnClose();
   return (
     <BrowserRouter>
       <>
