@@ -7,10 +7,10 @@ import { loginSuccess } from "../redux/userSlice";
 const useLogoutOnClose = async() => {
 
     const dispatch = useDispatch();
+    dispatch(loginSuccess(null));
 
     useEffect(() => {
-      const handleBeforeUnload = async() => {
-        dispatch(loginSuccess(null));
+      const handleBeforeUnload = async() => {   
         await axios.put("https://scholary-tube-server.vercel.app/api/users/logout").then((res)=>{
             console.log("Logged out");
         })
