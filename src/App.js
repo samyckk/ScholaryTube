@@ -10,6 +10,7 @@ import VerifyUp from './components/Verify/VerifyUp';
 import Info from './components/Verify/Info';
 import { useDispatch } from 'react-redux';
 import { loginSuccess } from './components/redux/userSlice';
+import axios from 'axios';
 // import useLogoutOnClose from './components/Login/Logout';
 
 function App() {
@@ -18,24 +19,18 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const dispatch = useDispatch();
 
-//   useEffect(() => {
-//     const isAccessTokenPresent = () => {
-//         const allCookies = document.cookie;
-    
-//         const cookiesArray = allCookies.split("; ");
-    
-//         for (let cookie of cookiesArray) {
-//             if (cookie.startsWith("access_token=")) {
-//                 return true;
-//             }
-//         }      
-//         dispatch(loginSuccess(null));
-//         return false;
-//     }
-
+  useEffect(() => {
+    const isAccessTokenPresent = async() => {
+        await axios.get('http://localhost:8080/api/users/logout').then( (res) =>{
+          
+          if(res.data === false){
+            dispatch(loginSuccess(null));
+          }
+        })
+    }
   
-//     isAccessTokenPresent();
-// }, [document.cookie]);
+    isAccessTokenPresent();
+}, []);
 
   return (
     <BrowserRouter>
