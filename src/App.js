@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const isAccessTokenPresent = async() => {
-        await axios.get('http://localhost:8080/api/users/logout').then( (res) =>{
+        await axios.get('https://scholary-tube-server.vercel.app/api/users/logout').then( (res) =>{
           
           if(res.data === false){
             dispatch(loginSuccess(null));
