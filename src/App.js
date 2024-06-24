@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Home/Navbar';
 import Page from './components/Home/Page';
@@ -8,13 +8,35 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from './components/Home/Search';
 import VerifyUp from './components/Verify/VerifyUp';
 import Info from './components/Verify/Info';
+import { useDispatch } from 'react-redux';
+import { loginSuccess } from './components/redux/userSlice';
 // import useLogoutOnClose from './components/Login/Logout';
 
 function App() {
 
   // eslint-disable-next-line no-unused-vars
   const [isLogin, setIsLogin] = useState(false);
-  // useLogoutOnClose();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const isAccessTokenPresent = () => {
+        const allCookies = document.cookie;
+    
+        const cookiesArray = allCookies.split("; ");
+    
+        for (let cookie of cookiesArray) {
+            if (cookie.startsWith("access_token=")) {
+                return true;
+            }
+        }      
+        dispatch(loginSuccess(null));
+        return false;
+    }
+
+  
+    isAccessTokenPresent();
+}, [document.cookie]);
+
   return (
     <BrowserRouter>
       <>
