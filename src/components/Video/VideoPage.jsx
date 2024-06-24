@@ -19,6 +19,14 @@ const VideoPage = () => {
     const [channel, setChannel] = useState({});
     const { userDetails } = useSelector(state => state.user);
     const { videoDetails } = useSelector(state => state.video);
+    const [showMore, setShowMore] = useState(false);
+
+    const toggleDescription = () => {
+        setShowMore(!showMore);
+    };
+
+    const shortDescription = videoDetails.desc?.substring(0, 100);
+    
 
     useEffect(() => {
         const fetchdata = async () => {
@@ -144,7 +152,15 @@ const VideoPage = () => {
                         </div>
                     </div>
                     <div id="desc" className="ml-12 px-2 mt-2">
-                        <span className="text-white">{videoDetails.desc}</span>
+                        <span className="text-white text-xs sm:text-base">
+                            {showMore ? videoDetails.desc : `${shortDescription}... `}
+                        </span>
+                        {
+                            videoDetails.desc.length > 100 && <button onClick={toggleDescription} className="text-blue-500 text-xs sm:text-base">
+                            {showMore ? "Show Less" : "Show More"}
+                        </button>
+                        }
+                        
                     </div>
                 </div>
                 <hr className="my-4" />
