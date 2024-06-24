@@ -7,6 +7,7 @@ import axios from "axios";
 import { dislikeRedux, likeRedux, subscription } from "../redux/userSlice";
 import Comments from "./comments/Comments";
 import Suggestion from "./suggestions/Suggestion";
+import Sidebar from "../Home/Sidebar2";
 
 axios.defaults.withCredentials = true;
 
@@ -101,11 +102,10 @@ const VideoPage = () => {
         return <h1>Loading...</h1>;
     }
 
-    // <div id="mainvid" className="h-[250px] sm:h-[560px]">
-    //                 <video controls style={{ height: "250px", width: "950px" }} className="rounded-2xl z-[-1]" src={videoDetails.videoUrl} alt="" />
-
     return (
-        <div id="main" className="flex flex-row justify-between w-full mt-14">
+        <div className="flex flex-row h-full w-full">
+            <Sidebar/>
+            <div id="main" className="flex flex-row justify-between w-full mt-14">
             <div id="videoSide" className="w-full sm:w-[63%] text-white m-6 mr-5">
                 <div id="mainvid" className="h-[220px] sm:h-[450px]">
                     <video controls style={{ height: "100%", width: "950px" }} className="rounded-2xl z-[-1]" src={videoDetails.videoUrl} alt="" />
@@ -157,6 +157,8 @@ const VideoPage = () => {
                 <Suggestion tags={videoDetails.tags} />
             </div>
         </div>
+        </div>
+        
     );
 };
 
