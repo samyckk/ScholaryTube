@@ -18,24 +18,24 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const isAccessTokenPresent = () => {
-        const allCookies = document.cookie;
+//   useEffect(() => {
+//     const isAccessTokenPresent = () => {
+//         const allCookies = document.cookie;
     
-        const cookiesArray = allCookies.split("; ");
+//         const cookiesArray = allCookies.split("; ");
     
-        for (let cookie of cookiesArray) {
-            if (cookie.startsWith("access_token=")) {
-                return true;
-            }
-        }      
-        dispatch(loginSuccess(null));
-        return false;
-    }
+//         for (let cookie of cookiesArray) {
+//             if (cookie.startsWith("access_token=")) {
+//                 return true;
+//             }
+//         }      
+//         dispatch(loginSuccess(null));
+//         return false;
+//     }
 
   
-    isAccessTokenPresent();
-}, [document.cookie]);
+//     isAccessTokenPresent();
+// }, [document.cookie]);
 
   return (
     <BrowserRouter>
