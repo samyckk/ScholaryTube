@@ -159,7 +159,7 @@ const VideoPage = () => {
                             {showMore ? videoDetails.desc : `${shortDescription}... `}
                         </span>
                         {
-                           videoDetails.desc && videoDetails.desc.length > 100 && <button onClick={toggleDescription} className="text-blue-500 text-xs sm:text-base">
+                           videoDetails.desc.length > 100 && <button onClick={toggleDescription} className="text-blue-500 text-xs sm:text-base">
                             {showMore ? "Show Less" : "Show More"}
                         </button>
                         }
