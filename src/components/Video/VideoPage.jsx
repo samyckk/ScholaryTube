@@ -20,12 +20,14 @@ const VideoPage = () => {
     const { userDetails } = useSelector(state => state.user);
     const { videoDetails } = useSelector(state => state.video);
     const [showMore, setShowMore] = useState(false);
+    const [shortDescription, setshortDescription] = useState("");
+
 
     const toggleDescription = () => {
         setShowMore(!showMore);
     };
 
-    const shortDescription = videoDetails.desc?.substring(0, 100);
+   
     
 
     useEffect(() => {
@@ -37,6 +39,7 @@ const VideoPage = () => {
             // Get video details
             await axios.get(`https://scholary-tube-server.vercel.app/api/videos/fetch/${videoId}`).then((res) => {
                 dispatch(fetchVideo(res.data));
+                setshortDescription(videoDetails.desc?.substring(0, 100));
             });
         };
 
