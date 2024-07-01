@@ -52,17 +52,16 @@ const SignInUpForm = ({setIsLogin}) => {
         }
     }
 
-    const handleSignup = async () => {
-        try {
-            await axios.post("https://scholary-tube-server.vercel.app/api/auth/signup", { name, email, password }, { withCredentials: true }).then((res)=>{
+   const handleSignup = async () => {
+        axios.post("http://localhost:8080/api/auth/signup", { name, email, password }, { withCredentials: true })
+            .then((res) => {
                 setIsSignUp(false);
-                console.log('Successfully signed up');
+                console.log(res.data);
+            })
+            .catch((error) => {
+                alert(error.response.data.message);
             });
-            
-        } catch (err) {
-            console.log(err);
-        }
-    }
+    };
     
 
     //GHOST BUTTONS
