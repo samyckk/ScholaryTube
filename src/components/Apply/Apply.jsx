@@ -16,7 +16,8 @@ const Apply = ({setApply})=>{
         await axios.put('https://scholary-tube-server.vercel.app/api/users/applyEdu').then((res)=>{
             console.log(res.data);
             dispatch(roleRedux("uploader"));
-            alert("Your request for Educator is Approved for you to explore as this is dummy site");
+            alert("Congratulations! Your request to become an Educator has been approved. Note: This is a demonstration site that's why your application is approved automatically");
+
             setApply(false);
         })
     }
