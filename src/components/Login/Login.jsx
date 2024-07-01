@@ -53,7 +53,7 @@ const SignInUpForm = ({setIsLogin}) => {
     }
 
    const handleSignup = async () => {
-        axios.post("http://localhost:8080/api/auth/signup", { name, email, password }, { withCredentials: true })
+        axios.post("https://scholary-tube-server.vercel.app/api/auth/signup", { name, email, password }, { withCredentials: true })
             .then((res) => {
                 setIsSignUp(false);
                 console.log(res.data);
